@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     siteName: 'Renovación Popular Ate',
     images: [
       {
-        url: 'https://renovacionpopularate.org.pe/og.png',
-        width: 1667,
-        height: 1667,
+        url: 'https://renovacionpopularate.org.pe/og.jpg',
+        width: 1200,
+        height: 630,
         alt: 'Elizabeth Cabezas, candidata a alcaldesa de Ate',
       },
     ],
@@ -34,8 +34,13 @@ export const metadata: Metadata = {
     title: 'Elizabeth Cabezas | Renovación Popular Ate',
     description:
       'Ate en buenas manos: seguridad, orden, decencia y participación vecinal.',
-    images: ['https://renovacionpopularate.org.pe/og.png'],
+    images: ['https://renovacionpopularate.org.pe/og.jpg'],
   },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
+  },
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
