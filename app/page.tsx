@@ -57,11 +57,20 @@ const navLinks = [
   { href: '#documentos', label: 'Documentos' },
 ];
 
-const actions = [
+const actions: {
+  number: string;
+  title: string;
+  text: string;
+  source?: string;
+  sourceUrl?: string;
+}[] = [
   {
     number: '280',
     title: 'cámaras apagadas denunciadas',
     text: 'Elizabeth expuso públicamente que Ate tuvo cámaras sin conectividad durante seis meses.',
+    source: 'Fuente: La República, 12 jun. 2023',
+    sourceUrl:
+      'https://larepublica.pe/sociedad/2023/06/12/ate-280-camaras-de-seguridad-no-graban-imagenes-actuales-sino-del-2020-serenazgo-seguridad-ciudadana-805104',
   },
   {
     number: '7',
@@ -72,6 +81,7 @@ const actions = [
     number: '40k',
     title: 'atenciones veterinarias (meta)',
     text: 'Meta del plan para una clínica veterinaria municipal con atención básica y campañas.',
+    source: 'Fuente: Ordenanza N.° 503-2024-MDA',
   },
 ];
 
@@ -336,6 +346,20 @@ export default function Home() {
                 <p className="text-4xl font-black text-primary">{action.number}</p>
                 <h3 className="mt-3 text-lg font-black text-card-foreground">{action.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">{action.text}</p>
+                {action.source && (
+                  action.sourceUrl ? (
+                    <a
+                      href={action.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 block text-xs font-bold text-[#0063b5] underline underline-offset-4"
+                    >
+                      {action.source}
+                    </a>
+                  ) : (
+                    <span className="mt-3 block text-xs font-bold text-muted-foreground">{action.source}</span>
+                  )
+                )}
               </article>
             ))}
           </div>
