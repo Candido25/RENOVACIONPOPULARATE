@@ -1,33 +1,29 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
 });
 
 export const metadata: Metadata = {
-  title: 'Renovacion Popular Ate',
+  title: 'Elizabeth Cabezas | Renovacion Popular Ate',
   description:
-    'Pagina oficial de Renovacion Popular Ate para convocar vecinos, presentar prioridades y organizar trabajo politico local.',
+    'Elizabeth Cabezas, candidata a alcaldesa de Ate por Renovacion Popular. Plan de Gobierno Municipal 2027-2030 y convocatoria vecinal.',
   openGraph: {
-    title: 'Renovacion Popular Ate',
+    title: 'Elizabeth Cabezas | Renovacion Popular Ate',
     description:
-      'Vecinos organizados por seguridad, orden y participacion ciudadana en Ate.',
+      'Ate en buenas manos: seguridad, orden, decencia y participacion vecinal.',
     url: 'https://renovacion-popular-ate.oalcantara33.chatgpt.site',
     siteName: 'Renovacion Popular Ate',
     images: [
       {
         url: 'https://renovacion-popular-ate.oalcantara33.chatgpt.site/og.png',
-        width: 1200,
-        height: 630,
-        alt: 'Renovacion Popular Ate',
+        width: 1667,
+        height: 1667,
+        alt: 'Elizabeth Cabezas, candidata a alcaldesa de Ate',
       },
     ],
     locale: 'es_PE',
@@ -35,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Renovacion Popular Ate',
+    title: 'Elizabeth Cabezas | Renovacion Popular Ate',
     description:
-      'Vecinos organizados por seguridad, orden y participacion ciudadana en Ate.',
+      'Ate en buenas manos: seguridad, orden, decencia y participacion vecinal.',
     images: ['https://renovacion-popular-ate.oalcantara33.chatgpt.site/og.png'],
   },
 };
@@ -49,9 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es-PE">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${montserrat.variable} antialiased`}>
         {children}
       </body>
     </html>
