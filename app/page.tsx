@@ -103,7 +103,15 @@ const proposals = [
   'Gestion de agua potable, alcantarillado, avenidas principales y obras de alto impacto.',
 ];
 
-const zones = ['Zona 1', 'Zona 2', 'Zona 3', 'Zona 4', 'Zona 5', 'Zona 6', 'Zona 7'];
+const zones = [
+  { number: '1', areas: 'Valdiviezo, Sauces y Salamanca' },
+  { number: '2', areas: '27 de Abril y Mayorazgo' },
+  { number: '3', areas: 'Zavaleta, Los Angeles, Virgen del Carmen, Micaela y Barbadillo' },
+  { number: '4', areas: 'Vitarte Central, San Gregorio y Amauta' },
+  { number: '5', areas: 'Santa Clara Central, Manylsa, Gloria e Hijos de Apurimac' },
+  { number: '6', areas: 'Horacio Zevallos y Pariachi' },
+  { number: '7', areas: 'Huaycan' },
+];
 
 export default function Home() {
   return (
@@ -284,15 +292,16 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-black text-primary">Ate se organiza por zonas</h2>
           </div>
           <div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {zones.map((zone) => (
-                <div key={zone} className="rounded-md border border-primary/15 bg-white px-4 py-3 text-sm font-bold text-primary shadow-sm">
-                  {zone}
+                <div key={zone.number} className="rounded-md border border-primary/15 bg-white px-4 py-3 shadow-sm">
+                  <p className="text-sm font-black text-primary">Zona {zone.number}</p>
+                  <p className="mt-1 text-sm font-semibold text-slate-700">{zone.areas}</p>
                 </div>
               ))}
             </div>
             <p className="mt-4 text-xs font-semibold text-muted-foreground">
-              Sectorizacion pendiente de confirmar con fuente oficial de la Municipalidad Distrital de Ate.
+              Fuente: Municipalidad Distrital de Ate (MDA), Ordenanza N.° 035-MDA y Ordenanza N.° 433-MDA.
             </p>
           </div>
         </div>
