@@ -19,6 +19,22 @@ import {
 
 import { Button } from '@/components/ui/button';
 
+function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" className={className}>
+      <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+    </svg>
+  );
+}
+
+function TiktokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" className={className}>
+      <path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
+    </svg>
+  );
+}
+
 const actions = [
   {
     number: '280',
@@ -87,7 +103,7 @@ const proposals = [
   'Gestion de agua potable, alcantarillado, avenidas principales y obras de alto impacto.',
 ];
 
-const zones = ['Ate Centro', 'Salamanca', 'Mayorazgo', 'Santa Clara', 'Huaycan', 'Vitarte'];
+const zones = ['Zona 1', 'Zona 2', 'Zona 3', 'Zona 4', 'Zona 5', 'Zona 6', 'Zona 7'];
 
 export default function Home() {
   return (
@@ -116,6 +132,26 @@ export default function Home() {
             </a>
             <a className="transition hover:text-primary" href="#documentos">
               Documentos
+            </a>
+          </div>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.facebook.com/ElizabethNancyCabezasFlores"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook de Elizabeth Cabezas"
+              className="text-slate-500 transition hover:text-primary"
+            >
+              <FacebookIcon className="size-5" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@elizabeth.nancy.cabezas"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok de Elizabeth Cabezas"
+              className="text-slate-500 transition hover:text-primary"
+            >
+              <TiktokIcon className="size-5" />
             </a>
           </div>
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
@@ -247,12 +283,17 @@ export default function Home() {
             <p className="text-sm font-black uppercase text-primary">Trabajo territorial</p>
             <h2 className="mt-3 text-3xl font-black text-primary">Ate se organiza por zonas</h2>
           </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {zones.map((zone) => (
-              <div key={zone} className="rounded-md border border-primary/15 bg-white px-4 py-3 text-sm font-bold text-primary shadow-sm">
-                {zone}
-              </div>
-            ))}
+          <div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {zones.map((zone) => (
+                <div key={zone} className="rounded-md border border-primary/15 bg-white px-4 py-3 text-sm font-bold text-primary shadow-sm">
+                  {zone}
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-xs font-semibold text-muted-foreground">
+              Sectorizacion pendiente de confirmar con fuente oficial de la Municipalidad Distrital de Ate.
+            </p>
           </div>
         </div>
       </section>
@@ -308,7 +349,12 @@ export default function Home() {
           <h2 className="mt-3 text-3xl font-black text-primary">Lee el CV y el plan completo</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
-          <a href="/hoja-de-vida-elizabeth-cabezas.pdf" className="group rounded-md border border-border bg-white p-6 shadow-sm transition hover:border-primary/40 hover:bg-secondary">
+          <a
+            href="/hoja-de-vida-elizabeth-cabezas.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-md border border-border bg-white p-6 shadow-sm transition hover:border-primary/40 hover:bg-secondary"
+          >
             <FileText className="mb-5 size-9 text-primary" aria-hidden="true" />
             <h3 className="text-xl font-black text-primary">Hoja de vida</h3>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -318,7 +364,12 @@ export default function Home() {
               Descargar PDF <Download className="size-4" aria-hidden="true" />
             </span>
           </a>
-          <a href="/plan-gobierno-municipal-ate-2027-2030.pdf" className="group rounded-md border border-border bg-white p-6 shadow-sm transition hover:border-primary/40 hover:bg-secondary">
+          <a
+            href="/plan-gobierno-municipal-ate-2027-2030.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-md border border-border bg-white p-6 shadow-sm transition hover:border-primary/40 hover:bg-secondary"
+          >
             <BookOpen className="mb-5 size-9 text-primary" aria-hidden="true" />
             <h3 className="text-xl font-black text-primary">Plan de gobierno 2027-2030</h3>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
@@ -358,9 +409,6 @@ export default function Home() {
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">Actividades, recorridos y reuniones por zona.</p>
               </a>
             </div>
-            <p className="mt-5 rounded-md bg-accent px-4 py-3 text-sm font-bold text-accent-foreground">
-              Dominio sugerido: renovacionpopularate.org.pe
-            </p>
           </div>
         </div>
       </section>

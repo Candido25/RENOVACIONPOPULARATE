@@ -131,6 +131,27 @@
         color: var(--white);
       }
 
+      .social {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: #425466;
+      }
+
+      .social a {
+        display: inline-flex;
+      }
+
+      .social a:hover {
+        color: var(--primary);
+      }
+
+      .social svg {
+        height: 20px;
+        width: 20px;
+        fill: currentColor;
+      }
+
       .hero {
         position: relative;
         overflow: hidden;
@@ -366,6 +387,13 @@
         padding: 14px 16px;
       }
 
+      .zone-note {
+        margin-top: 14px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
       .proposal-list {
         display: grid;
         gap: 12px;
@@ -456,16 +484,6 @@
         margin-top: 8px;
       }
 
-      .domain {
-        margin-top: 16px;
-        border-radius: 6px;
-        background: var(--accent);
-        color: #243653;
-        font-size: 14px;
-        font-weight: 900;
-        padding: 14px 16px;
-      }
-
       footer {
         border-top: 1px solid rgba(255, 255, 255, 0.2);
         background: var(--primary);
@@ -536,6 +554,24 @@
           <a href="#compromisos">Compromisos</a>
           <a href="#plan">Plan</a>
           <a href="#documentos">Documentos</a>
+        </div>
+        <div class="social">
+          <a
+            href="https://www.facebook.com/ElizabethNancyCabezasFlores"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook de Elizabeth Cabezas"
+          >
+            <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+          </a>
+          <a
+            href="https://www.tiktok.com/@elizabeth.nancy.cabezas"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok de Elizabeth Cabezas"
+          >
+            <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+          </a>
         </div>
         <a class="button" href="#participa">Afiliate →</a>
       </nav>
@@ -639,13 +675,17 @@
             <span class="eyebrow" style="background: white; color: var(--primary)">Trabajo territorial</span>
             <h2 class="section-title">Ate se organiza por zonas</h2>
           </div>
-          <div class="zone-grid">
-            <div class="zone">Ate Centro</div>
-            <div class="zone">Salamanca</div>
-            <div class="zone">Mayorazgo</div>
-            <div class="zone">Santa Clara</div>
-            <div class="zone">Huaycan</div>
-            <div class="zone">Vitarte</div>
+          <div>
+            <div class="zone-grid">
+              <div class="zone">Zona 1</div>
+              <div class="zone">Zona 2</div>
+              <div class="zone">Zona 3</div>
+              <div class="zone">Zona 4</div>
+              <div class="zone">Zona 5</div>
+              <div class="zone">Zona 6</div>
+              <div class="zone">Zona 7</div>
+            </div>
+            <p class="zone-note">Sectorizacion pendiente de confirmar con fuente oficial de la Municipalidad Distrital de Ate.</p>
           </div>
         </div>
       </section>
@@ -695,12 +735,12 @@
           <span class="eyebrow" style="background: var(--soft); color: var(--primary)">Documentos oficiales</span>
           <h2 class="section-title">Lee el CV y el plan completo</h2>
           <div class="docs">
-            <a class="doc" href="hoja-de-vida-elizabeth-cabezas.pdf">
+            <a class="doc" href="hoja-de-vida-elizabeth-cabezas.pdf" target="_blank" rel="noopener noreferrer">
               <h3>Hoja de vida</h3>
               <p>Formacion, trayectoria laboral, liderazgo social y antecedentes de Elizabeth Cabezas.</p>
               <span>Descargar PDF ↓</span>
             </a>
-            <a class="doc" href="plan-gobierno-municipal-ate-2027-2030.pdf">
+            <a class="doc" href="plan-gobierno-municipal-ate-2027-2030.pdf" target="_blank" rel="noopener noreferrer">
               <h3>Plan de gobierno 2027-2030</h3>
               <p>Diagnostico territorial, objetivos estrategicos, propuestas, presupuesto y rendicion de cuentas.</p>
               <span>Descargar PDF ↓</span>
@@ -729,7 +769,6 @@
                 <span>Actividades, recorridos y reuniones por zona.</span>
               </a>
             </div>
-            <p class="domain">Dominio sugerido: renovacionpopularate.org.pe</p>
           </div>
         </div>
       </section>
