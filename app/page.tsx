@@ -287,14 +287,14 @@ export default function Home() {
 
       <section id="candidata" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="overflow-hidden rounded-md border border-border bg-white shadow-sm">
+          <div className="flex justify-center overflow-hidden rounded-md border border-border bg-white shadow-sm">
             <img
               src="/elizabeth-cabezas-porky.jpg"
               alt="Elizabeth Cabezas junto a Rafael López Aliaga en pieza de campaña"
-              width={960}
-              height={365}
+              width={572}
+              height={1024}
               loading="lazy"
-              className="w-full object-cover"
+              className="h-auto max-h-[640px] w-auto max-w-full object-contain"
             />
           </div>
           <div>
