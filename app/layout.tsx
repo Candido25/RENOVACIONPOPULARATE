@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     title: 'Elizabeth Cabezas | Renovacion Popular Ate',
     description:
       'Ate en buenas manos: seguridad, orden, decencia y participacion vecinal.',
-    url: 'https://renovacion-popular-ate.oalcantara33.chatgpt.site',
+    url: 'https://renovacionpopularate.org.pe',
     siteName: 'Renovacion Popular Ate',
     images: [
       {
-        url: 'https://renovacion-popular-ate.oalcantara33.chatgpt.site/og.png',
+        url: 'https://renovacionpopularate.org.pe/og.png',
         width: 1667,
         height: 1667,
         alt: 'Elizabeth Cabezas, candidata a alcaldesa de Ate',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: 'Elizabeth Cabezas | Renovacion Popular Ate',
     description:
       'Ate en buenas manos: seguridad, orden, decencia y participacion vecinal.',
-    images: ['https://renovacion-popular-ate.oalcantara33.chatgpt.site/og.png'],
+    images: ['https://renovacionpopularate.org.pe/og.png'],
   },
 };
 
