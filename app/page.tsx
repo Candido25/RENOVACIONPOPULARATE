@@ -165,24 +165,26 @@ export default function Home() {
               </a>
             ))}
           </div>
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden items-center gap-3 lg:flex">
             <a
               href="https://www.facebook.com/ElizabethNancyCabezasFlores"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook de Elizabeth Cabezas"
-              className="text-slate-500 transition hover:text-primary"
+              className="inline-flex items-center gap-2 rounded-md border-2 border-white bg-[#1877F2] px-3 py-2 text-sm font-bold text-white shadow-sm transition hover:opacity-90 hover:shadow-md"
             >
-              <FacebookIcon className="size-5" />
+              <FacebookIcon className="size-4" />
+              Facebook
             </a>
             <a
               href="https://www.tiktok.com/@elizabeth.nancy.cabezas"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok de Elizabeth Cabezas"
-              className="text-slate-500 transition hover:text-primary"
+              className="inline-flex items-center gap-2 rounded-md border-2 border-white bg-black px-3 py-2 text-sm font-bold text-white shadow-sm transition hover:opacity-90 hover:shadow-md"
             >
-              <TiktokIcon className="size-5" />
+              <TiktokIcon className="size-4" />
+              TikTok
             </a>
           </div>
           <div className="flex items-center gap-2">
@@ -217,24 +219,26 @@ export default function Home() {
                   {link.label}
                 </a>
               ))}
-              <div className="mt-2 flex items-center gap-5 border-t border-border px-3 pt-3">
+              <div className="mt-2 flex items-center gap-3 border-t border-border px-3 pt-3">
                 <a
                   href="https://www.facebook.com/ElizabethNancyCabezasFlores"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook de Elizabeth Cabezas"
-                  className="text-slate-500 transition hover:text-primary"
+                  className="inline-flex items-center gap-2 rounded-md border-2 border-white bg-[#1877F2] px-3 py-2 text-sm font-bold text-white shadow-sm transition hover:opacity-90 hover:shadow-md"
                 >
-                  <FacebookIcon className="size-5" />
+                  <FacebookIcon className="size-4" />
+                  Facebook
                 </a>
                 <a
                   href="https://www.tiktok.com/@elizabeth.nancy.cabezas"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="TikTok de Elizabeth Cabezas"
-                  className="text-slate-500 transition hover:text-primary"
+                  className="inline-flex items-center gap-2 rounded-md border-2 border-white bg-black px-3 py-2 text-sm font-bold text-white shadow-sm transition hover:opacity-90 hover:shadow-md"
                 >
-                  <TiktokIcon className="size-5" />
+                  <TiktokIcon className="size-4" />
+                  TikTok
                 </a>
               </div>
             </div>

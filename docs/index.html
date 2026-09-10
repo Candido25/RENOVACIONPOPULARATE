@@ -164,21 +164,39 @@
       .social {
         display: flex;
         align-items: center;
-        gap: 16px;
-        color: #425466;
+        gap: 10px;
       }
 
       .social a {
         display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 2px solid white;
+        border-radius: 6px;
+        padding: 8px 14px;
+        color: white;
+        font-size: 14px;
+        font-weight: 800;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        transition: opacity 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .social a.facebook {
+        background: #1877f2;
+      }
+
+      .social a.tiktok {
+        background: #000000;
       }
 
       .social a:hover {
-        color: var(--primary);
+        opacity: 0.85;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
       }
 
       .social svg {
-        height: 20px;
-        width: 20px;
+        height: 18px;
+        width: 18px;
         fill: currentColor;
       }
 
@@ -233,15 +251,42 @@
 
       .mobile-social {
         display: flex;
-        gap: 20px;
+        gap: 10px;
         margin-top: 8px;
         padding: 14px 12px 4px;
         border-top: 1px solid var(--line);
       }
 
+      .mobile-social a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 2px solid white;
+        border-radius: 6px;
+        padding: 8px 14px;
+        color: white;
+        font-size: 14px;
+        font-weight: 800;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+        transition: opacity 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .mobile-social a.facebook {
+        background: #1877f2;
+      }
+
+      .mobile-social a.tiktok {
+        background: #000000;
+      }
+
+      .mobile-social a:hover {
+        opacity: 0.85;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+      }
+
       .mobile-social svg {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
         fill: currentColor;
       }
 
@@ -751,20 +796,24 @@
         </div>
         <div class="social">
           <a
+            class="facebook"
             href="https://www.facebook.com/ElizabethNancyCabezasFlores"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook de Elizabeth Cabezas"
           >
             <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+            Facebook
           </a>
           <a
+            class="tiktok"
             href="https://www.tiktok.com/@elizabeth.nancy.cabezas"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TikTok de Elizabeth Cabezas"
           >
             <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+            TikTok
           </a>
         </div>
         <div class="nav-right">
@@ -782,11 +831,13 @@
           <a href="#plan">Plan</a>
           <a href="#documentos">Documentos</a>
           <div class="mobile-social">
-            <a href="https://www.facebook.com/ElizabethNancyCabezasFlores" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Elizabeth Cabezas">
+            <a class="facebook" href="https://www.facebook.com/ElizabethNancyCabezasFlores" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Elizabeth Cabezas">
               <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+              Facebook
             </a>
-            <a href="https://www.tiktok.com/@elizabeth.nancy.cabezas" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Elizabeth Cabezas">
+            <a class="tiktok" href="https://www.tiktok.com/@elizabeth.nancy.cabezas" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Elizabeth Cabezas">
               <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+              TikTok
             </a>
           </div>
         </div>
