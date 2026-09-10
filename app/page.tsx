@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import {
   ArrowRight,
   BookOpen,
@@ -10,11 +13,13 @@ import {
   HeartHandshake,
   MapPin,
   Megaphone,
+  Menu,
   MessageCircle,
   ShieldCheck,
   TrendingUp,
   UserRound,
   Users,
+  X,
 } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -35,11 +40,28 @@ function TiktokIcon({ className }: { className?: string }) {
   );
 }
 
+function WhatsappIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" className={className}>
+      <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+    </svg>
+  );
+}
+
+const WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/EhCp05cObuO6lLlOOhEmK5?s=sw&p=a&mlu=4&ilr=4';
+
+const navLinks = [
+  { href: '#candidata', label: 'Candidata' },
+  { href: '#compromisos', label: 'Compromisos' },
+  { href: '#plan', label: 'Plan' },
+  { href: '#documentos', label: 'Documentos' },
+];
+
 const actions = [
   {
     number: '280',
-    title: 'camaras apagadas denunciadas',
-    text: 'Elizabeth expuso publicamente que Ate tuvo camaras sin conectividad durante seis meses.',
+    title: 'cámaras apagadas denunciadas',
+    text: 'Elizabeth expuso públicamente que Ate tuvo cámaras sin conectividad durante seis meses.',
   },
   {
     number: '7',
@@ -49,7 +71,7 @@ const actions = [
   {
     number: '40k',
     title: 'atenciones veterinarias',
-    text: 'Meta del plan para una clinica veterinaria municipal con atencion basica y campanas.',
+    text: 'Meta del plan para una clínica veterinaria municipal con atención básica y campañas.',
   },
 ];
 
@@ -57,71 +79,77 @@ const commitments = [
   {
     icon: ShieldCheck,
     title: 'Seguridad que funciona',
-    text: 'Camaras encendidas, serenazgo coordinado con PNP y tablero semanal de incidentes atendidos.',
+    text: 'Cámaras encendidas, serenazgo coordinado con PNP y tablero semanal de incidentes atendidos.',
   },
   {
     icon: Building2,
     title: 'Municipalidad que atiende',
-    text: 'Tramites con plazo claro, responsable identificado, trato digno y cero "vuelva manana".',
+    text: 'Trámites con plazo claro, responsable identificado, trato digno y cero "vuelva mañana".',
   },
   {
     icon: HeartHandshake,
     title: 'Barrio vivo en toda Ate',
-    text: 'Ruta de limpieza publicada, parques recuperados y gestion visible en cada cuadra.',
+    text: 'Ruta de limpieza publicada, parques recuperados y gestión visible en cada cuadra.',
   },
 ];
 
 const planAxes = [
   {
     icon: Users,
-    title: 'Dimension social',
-    text: 'Seguridad ciudadana, salud, infancia, educacion, deporte, cultura, adulto mayor e inclusion.',
+    title: 'Dimensión social',
+    text: 'Seguridad ciudadana, salud, infancia, educación, deporte, cultura, adulto mayor e inclusión.',
   },
   {
     icon: TrendingUp,
-    title: 'Dimension economica',
-    text: 'Formalizacion, empleo juvenil, fortalecimiento de MYPE y simplificacion municipal.',
+    title: 'Dimensión económica',
+    text: 'Formalización, empleo juvenil, fortalecimiento de MYPE y simplificación municipal.',
   },
   {
     icon: MapPin,
-    title: 'Dimension ambiental',
-    text: 'Limpieza publica, areas verdes, recuperacion de espacios publicos y ribera del rio Rimac.',
+    title: 'Dimensión ambiental',
+    text: 'Limpieza pública, áreas verdes, recuperación de espacios públicos y ribera del río Rímac.',
   },
   {
     icon: FileText,
-    title: 'Dimension institucional',
-    text: 'Ejecucion presupuestal, transparencia, digitalizacion y rendicion de cuentas ciudadana.',
+    title: 'Dimensión institucional',
+    text: 'Ejecución presupuestal, transparencia, digitalización y rendición de cuentas ciudadana.',
   },
 ];
 
 const proposals = [
-  'Cuatro centrales de monitoreo inteligente en Salamanca, Vitarte, Santa Clara y Huaycan.',
-  'Pistas, veredas, escaleras, muros de contencion, parques, losas deportivas y locales comunales.',
+  'Cuatro centrales de monitoreo inteligente en Salamanca, Vitarte, Santa Clara y Huaycán.',
+  'Pistas, veredas, escaleras, muros de contención, parques, losas deportivas y locales comunales.',
   'Centro Municipal de empleabilidad juvenil y programa "Mi Primera Chamba".',
-  'Policlinico, farmacia municipal, cuna municipal y veterinaria municipal.',
-  'Tablero de control ciudadano y audiencias publicas dos veces al ano.',
-  'Gestion de agua potable, alcantarillado, avenidas principales y obras de alto impacto.',
+  'Policlínico, farmacia municipal, cuna municipal y veterinaria municipal.',
+  'Tablero de control ciudadano y audiencias públicas dos veces al año.',
+  'Gestión de agua potable, alcantarillado, avenidas principales y obras de alto impacto.',
 ];
 
 const zones = [
   { number: '1', areas: 'Valdiviezo, Sauces y Salamanca' },
   { number: '2', areas: '27 de Abril y Mayorazgo' },
-  { number: '3', areas: 'Zavaleta, Los Angeles, Virgen del Carmen, Micaela y Barbadillo' },
+  { number: '3', areas: 'Zavaleta, Los Ángeles, Virgen del Carmen, Micaela y Barbadillo' },
   { number: '4', areas: 'Vitarte Central, San Gregorio y Amauta' },
-  { number: '5', areas: 'Santa Clara Central, Manylsa, Gloria e Hijos de Apurimac' },
+  { number: '5', areas: 'Santa Clara Central, Manylsa, Gloria e Hijos de Apurímac' },
   { number: '6', areas: 'Horacio Zevallos y Pariachi' },
-  { number: '7', areas: 'Huaycan' },
+  { number: '7', areas: 'Huaycán' },
 ];
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <div className="bg-accent px-5 py-2 text-center text-xs font-black uppercase tracking-wide text-accent-foreground sm:px-8 sm:text-sm">
+        Elecciones Municipales y Regionales 2026 — 04 de octubre. Marca &quot;R&quot; en Provincial y &quot;R&quot; en Distrital.
+      </div>
+
       <header className="sticky top-0 z-30 border-b border-border bg-white/95 shadow-sm backdrop-blur">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8">
-          <a href="#inicio" className="flex items-center gap-3" aria-label="Renovacion Popular Ate">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-3 sm:px-8">
+          <a href="#inicio" className="flex items-center gap-3" aria-label="Renovación Popular Ate">
             <img
               src="/logo-renovacion-popular.png"
-              alt="Renovacion Popular"
+              alt="Renovación Popular"
               className="h-12 w-auto object-contain"
             />
             <span className="hidden border-l border-border pl-3 text-sm font-bold text-primary sm:block">
@@ -129,20 +157,13 @@ export default function Home() {
             </span>
           </a>
           <div className="hidden items-center gap-6 text-sm font-bold text-slate-700 lg:flex">
-            <a className="transition hover:text-primary" href="#candidata">
-              Candidata
-            </a>
-            <a className="transition hover:text-primary" href="#compromisos">
-              Compromisos
-            </a>
-            <a className="transition hover:text-primary" href="#plan">
-              Plan
-            </a>
-            <a className="transition hover:text-primary" href="#documentos">
-              Documentos
-            </a>
+            {navLinks.map((link) => (
+              <a key={link.href} className="transition hover:text-primary" href={link.href}>
+                {link.label}
+              </a>
+            ))}
           </div>
-          <div className="flex items-center gap-4">
+          <div className="hidden items-center gap-4 lg:flex">
             <a
               href="https://www.facebook.com/ElizabethNancyCabezasFlores"
               target="_blank"
@@ -162,13 +183,61 @@ export default function Home() {
               <TiktokIcon className="size-5" />
             </a>
           </div>
-          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-            <a href="#participa">
-              Afiliate
-              <ArrowRight aria-hidden="true" />
-            </a>
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+              <a href={WHATSAPP_GROUP_URL} target="_blank" rel="noopener noreferrer">
+                Afíliate
+                <ArrowRight aria-hidden="true" />
+              </a>
+            </Button>
+            <button
+              type="button"
+              aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+              aria-expanded={menuOpen}
+              aria-controls="menu-movil"
+              onClick={() => setMenuOpen((open) => !open)}
+              className="inline-flex size-10 items-center justify-center rounded-md border border-border text-slate-700 transition hover:border-primary hover:text-primary lg:hidden"
+            >
+              {menuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+            </button>
+          </div>
         </nav>
+        {menuOpen && (
+          <div id="menu-movil" className="border-t border-border bg-white lg:hidden">
+            <div className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-3 sm:px-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="rounded-md px-3 py-3 text-sm font-bold text-slate-700 transition hover:bg-secondary hover:text-primary"
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="mt-2 flex items-center gap-5 border-t border-border px-3 pt-3">
+                <a
+                  href="https://www.facebook.com/ElizabethNancyCabezasFlores"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook de Elizabeth Cabezas"
+                  className="text-slate-500 transition hover:text-primary"
+                >
+                  <FacebookIcon className="size-5" />
+                </a>
+                <a
+                  href="https://www.tiktok.com/@elizabeth.nancy.cabezas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok de Elizabeth Cabezas"
+                  className="text-slate-500 transition hover:text-primary"
+                >
+                  <TiktokIcon className="size-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
       <section id="inicio" className="relative overflow-hidden bg-primary text-white">
@@ -185,7 +254,7 @@ export default function Home() {
             </h1>
             <p className="mt-3 text-2xl font-black uppercase text-accent sm:text-3xl">Alcaldesa de Ate</p>
             <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-blue-50">
-              Licenciada en Administracion, regidora de Ate 2023-2026 y candidata de Renovacion Popular
+              Licenciada en Administración, regidora de Ate 2023-2026 y candidata de Renovación Popular
               para recuperar el orden, la seguridad y la decencia en el distrito.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -216,7 +285,7 @@ export default function Home() {
           <div className="overflow-hidden rounded-md border border-border bg-white shadow-sm">
             <img
               src="/elizabeth-cabezas-porky.jpg"
-              alt="Elizabeth Cabezas junto a Rafael Lopez Aliaga en pieza de campana"
+              alt="Elizabeth Cabezas junto a Rafael López Aliaga en pieza de campaña"
               className="w-full object-cover"
             />
           </div>
@@ -226,15 +295,15 @@ export default function Home() {
               Elizabeth Nancy Cabezas Flores
             </h2>
             <p className="mt-5 leading-8 text-muted-foreground">
-              Vecina arraigada en Ate, con raices andahuaylinas, experiencia municipal y una trayectoria
-              construida desde la fiscalizacion, la comunidad y el servicio publico.
+              Vecina arraigada en Ate, con raíces andahuaylinas, experiencia municipal y una trayectoria
+              construida desde la fiscalización, la comunidad y el servicio público.
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               {[
                 'Regidora de Ate 2023-2026',
-                'Licenciada en Administracion de Empresas por USIL',
-                'Programa especializado en Gestion Publica por USIL',
-                'Fundadora de la Asociacion de Mujeres Emprendedoras de Lima Este',
+                'Licenciada en Administración de Empresas por USIL',
+                'Programa especializado en Gestión Pública por USIL',
+                'Fundadora de la Asociación de Mujeres Emprendedoras de Lima Este',
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-md border border-border bg-white px-4 py-3 text-sm font-bold text-slate-700">
                   <CheckCircle2 className="size-5 shrink-0 text-accent-foreground" aria-hidden="true" />
@@ -250,7 +319,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
           <div className="mb-8">
             <p className="text-sm font-black uppercase text-primary">Hechos verificables</p>
-            <h2 className="mt-3 text-3xl font-black text-primary">Fiscalizacion con coraje</h2>
+            <h2 className="mt-3 text-3xl font-black text-primary">Fiscalización con coraje</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {actions.map((action) => (
@@ -271,7 +340,7 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">Resultados, no promesas</h2>
           </div>
           <p className="max-w-xl leading-7 text-muted-foreground">
-            El mensaje de campana se concentra en seguridad operativa, atencion municipal y barrios vivos en todo el distrito.
+            El mensaje de campaña se concentra en seguridad operativa, atención municipal y barrios vivos en todo el distrito.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
@@ -315,8 +384,8 @@ export default function Home() {
               Ate: volver a creer en un distrito con orden, seguridad y decencia
             </h2>
             <p className="mt-5 leading-8 text-muted-foreground">
-              El plan identifica problemas de inseguridad, servicios basicos, limpieza publica, congestion,
-              informalidad y baja ejecucion presupuestal. La ruta propone gestion tecnica, transparente y de puertas abiertas.
+              El plan identifica problemas de inseguridad, servicios básicos, limpieza pública, congestión,
+              informalidad y baja ejecución presupuestal. La ruta propone gestión técnica, transparente y de puertas abiertas.
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -334,7 +403,7 @@ export default function Home() {
       <section className="border-y border-border bg-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 sm:px-8 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
-            <p className="text-sm font-black uppercase text-primary">Inversion y obras</p>
+            <p className="text-sm font-black uppercase text-primary">Inversión y obras</p>
             <h2 className="mt-3 text-3xl font-black text-primary">S/ 710 millones proyectados para inversiones</h2>
             <p className="mt-5 leading-8 text-muted-foreground">
               El plan plantea ejecutar S/ 510 millones de presupuesto municipal y gestionar S/ 200 millones adicionales
@@ -367,7 +436,7 @@ export default function Home() {
             <FileText className="mb-5 size-9 text-primary" aria-hidden="true" />
             <h3 className="text-xl font-black text-primary">Hoja de vida</h3>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              Formacion, trayectoria laboral, liderazgo social y antecedentes de Elizabeth Cabezas.
+              Formación, trayectoria laboral, liderazgo social y antecedentes de Elizabeth Cabezas.
             </p>
             <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-primary">
               Descargar PDF <Download className="size-4" aria-hidden="true" />
@@ -382,7 +451,7 @@ export default function Home() {
             <BookOpen className="mb-5 size-9 text-primary" aria-hidden="true" />
             <h3 className="text-xl font-black text-primary">Plan de gobierno 2027-2030</h3>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
-              Diagnostico territorial, objetivos estrategicos, propuestas, presupuesto y rendicion de cuentas.
+              Diagnóstico territorial, objetivos estratégicos, propuestas, presupuesto y rendición de cuentas.
             </p>
             <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-primary">
               Descargar PDF <Download className="size-4" aria-hidden="true" />
@@ -398,14 +467,29 @@ export default function Home() {
               <Megaphone className="size-4" aria-hidden="true" />
               Convocatoria abierta
             </p>
-            <h2 className="mt-5 text-3xl font-black sm:text-5xl">Sumate a Renovacion Popular Ate</h2>
+            <h2 className="mt-5 text-3xl font-black sm:text-5xl">Súmate a Renovación Popular Ate</h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-blue-50">
-              Afiliacion, personeros, voluntariado, reuniones vecinales y defensa del voto para que Ate vuelva a estar en buenas manos.
+              Afiliación, personeros, voluntariado, reuniones vecinales y defensa del voto para que Ate vuelva a estar en buenas manos.
             </p>
           </div>
           <div className="rounded-md border border-white/15 bg-white p-6 text-slate-900 shadow-2xl">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <a href="mailto:contacto@renovacionpopularate.org.pe" className="group rounded-md border border-border p-5 transition hover:border-primary/35 hover:bg-secondary">
+            <a
+              href={WHATSAPP_GROUP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 rounded-md bg-accent px-5 py-4 text-accent-foreground transition hover:bg-accent/90"
+            >
+              <WhatsappIcon className="size-7 shrink-0" />
+              <span>
+                <span className="block font-black">Únete al grupo de WhatsApp</span>
+                <span className="block text-sm font-semibold">Afiliación, voluntariado y novedades de la campaña</span>
+              </span>
+            </a>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <a
+                href="mailto:contacto@renovacionpopularate.org.pe?subject=Quiero%20afiliarme%20a%20Renovaci%C3%B3n%20Popular%20Ate"
+                className="group rounded-md border border-border p-5 transition hover:border-primary/35 hover:bg-secondary"
+              >
                 <MessageCircle className="mb-4 size-7 text-primary" aria-hidden="true" />
                 <p className="font-black text-primary">Contacto</p>
                 <p className="mt-2 break-words text-sm leading-6 text-muted-foreground">
@@ -414,8 +498,8 @@ export default function Home() {
               </a>
               <a href="#documentos" className="group rounded-md border border-border p-5 transition hover:border-primary/35 hover:bg-secondary">
                 <CalendarDays className="mb-4 size-7 text-primary" aria-hidden="true" />
-                <p className="font-black text-primary">Campana</p>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">Actividades, recorridos y reuniones por zona.</p>
+                <p className="font-black text-primary">Documentos</p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">Plan de gobierno y hoja de vida para revisar.</p>
               </a>
             </div>
           </div>

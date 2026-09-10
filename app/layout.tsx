@@ -9,15 +9,15 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Elizabeth Cabezas | Renovacion Popular Ate',
+  title: 'Elizabeth Cabezas | Renovación Popular Ate',
   description:
-    'Elizabeth Cabezas, candidata a alcaldesa de Ate por Renovacion Popular. Plan de Gobierno Municipal 2027-2030 y convocatoria vecinal.',
+    'Elizabeth Cabezas, candidata a alcaldesa de Ate por Renovación Popular. Plan de Gobierno Municipal 2027-2030 y convocatoria vecinal.',
   openGraph: {
-    title: 'Elizabeth Cabezas | Renovacion Popular Ate',
+    title: 'Elizabeth Cabezas | Renovación Popular Ate',
     description:
-      'Ate en buenas manos: seguridad, orden, decencia y participacion vecinal.',
+      'Ate en buenas manos: seguridad, orden, decencia y participación vecinal.',
     url: 'https://renovacionpopularate.org.pe',
-    siteName: 'Renovacion Popular Ate',
+    siteName: 'Renovación Popular Ate',
     images: [
       {
         url: 'https://renovacionpopularate.org.pe/og.png',
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Elizabeth Cabezas | Renovacion Popular Ate',
+    title: 'Elizabeth Cabezas | Renovación Popular Ate',
     description:
-      'Ate en buenas manos: seguridad, orden, decencia y participacion vecinal.',
+      'Ate en buenas manos: seguridad, orden, decencia y participación vecinal.',
     images: ['https://renovacionpopularate.org.pe/og.png'],
   },
 };
