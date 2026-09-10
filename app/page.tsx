@@ -70,7 +70,7 @@ const actions = [
   },
   {
     number: '40k',
-    title: 'atenciones veterinarias',
+    title: 'atenciones veterinarias (meta)',
     text: 'Meta del plan para una clínica veterinaria municipal con atención básica y campañas.',
   },
 ];
@@ -150,9 +150,11 @@ export default function Home() {
             <img
               src="/logo-renovacion-popular.png"
               alt="Renovación Popular"
+              width={300}
+              height={72}
               className="h-12 w-auto object-contain"
             />
-            <span className="hidden border-l border-border pl-3 text-sm font-bold text-primary sm:block">
+            <span className="hidden border-l border-border pl-3 text-sm font-bold text-[#0063b5] sm:block">
               Ate
             </span>
           </a>
@@ -274,6 +276,9 @@ export default function Home() {
             <img
               src="/elizabeth-cabezas.jpg"
               alt="Elizabeth Cabezas, candidata a alcaldesa de Ate"
+              width={1667}
+              height={1667}
+              fetchPriority="high"
               className="aspect-[1.18/1] w-full object-cover object-center"
             />
           </div>
@@ -286,11 +291,14 @@ export default function Home() {
             <img
               src="/elizabeth-cabezas-porky.jpg"
               alt="Elizabeth Cabezas junto a Rafael López Aliaga en pieza de campaña"
+              width={960}
+              height={365}
+              loading="lazy"
               className="w-full object-cover"
             />
           </div>
           <div>
-            <p className="text-sm font-black uppercase text-primary">Nuestra candidata</p>
+            <p className="text-sm font-black uppercase text-[#0063b5]">Nuestra candidata</p>
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-5xl">
               Elizabeth Nancy Cabezas Flores
             </h2>
@@ -318,7 +326,7 @@ export default function Home() {
       <section className="border-y border-border bg-white">
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
           <div className="mb-8">
-            <p className="text-sm font-black uppercase text-primary">Hechos verificables</p>
+            <p className="text-sm font-black uppercase text-[#0063b5]">Hechos verificables</p>
             <h2 className="mt-3 text-3xl font-black text-primary">Fiscalización con coraje</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
@@ -336,7 +344,7 @@ export default function Home() {
       <section id="compromisos" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <div className="mb-9 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
-            <p className="text-sm font-black uppercase text-primary">Tres compromisos para Ate</p>
+            <p className="text-sm font-black uppercase text-[#0063b5]">Tres compromisos para Ate</p>
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">Resultados, no promesas</h2>
           </div>
           <p className="max-w-xl leading-7 text-muted-foreground">
@@ -357,14 +365,14 @@ export default function Home() {
       <section className="bg-secondary">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-14 sm:px-8 lg:grid-cols-[1fr_1fr]">
           <div>
-            <p className="text-sm font-black uppercase text-primary">Trabajo territorial</p>
+            <p className="text-sm font-black uppercase text-[#0063b5]">Trabajo territorial</p>
             <h2 className="mt-3 text-3xl font-black text-primary">Ate se organiza por zonas</h2>
           </div>
           <div>
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {zones.map((zone) => (
                 <div key={zone.number} className="rounded-md border border-primary/15 bg-white px-4 py-3 shadow-sm">
-                  <p className="text-sm font-black text-primary">Zona {zone.number}</p>
+                  <p className="text-sm font-black text-[#0063b5]">Zona {zone.number}</p>
                   <p className="mt-1 text-sm font-semibold text-slate-700">{zone.areas}</p>
                 </div>
               ))}
@@ -379,7 +387,7 @@ export default function Home() {
       <section id="plan" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-black uppercase text-primary">Plan de Gobierno Municipal 2027-2030</p>
+            <p className="text-sm font-black uppercase text-[#0063b5]">Plan de Gobierno Municipal 2027-2030</p>
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
               Ate: volver a creer en un distrito con orden, seguridad y decencia
             </h2>
@@ -403,12 +411,20 @@ export default function Home() {
       <section className="border-y border-border bg-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 sm:px-8 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
-            <p className="text-sm font-black uppercase text-primary">Inversión y obras</p>
+            <p className="text-sm font-black uppercase text-[#0063b5]">Inversión y obras</p>
             <h2 className="mt-3 text-3xl font-black text-primary">S/ 710 millones proyectados para inversiones</h2>
             <p className="mt-5 leading-8 text-muted-foreground">
               El plan plantea ejecutar S/ 510 millones de presupuesto municipal y gestionar S/ 200 millones adicionales
               para obras de alto impacto durante 2027-2030.
             </p>
+            <a
+              href="/plan-gobierno-municipal-ate-2027-2030.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-black text-[#0063b5] underline underline-offset-4"
+            >
+              Ver el detalle en el Plan de Gobierno (PDF)
+            </a>
           </div>
           <div className="space-y-3">
             {proposals.map((item) => (
@@ -423,7 +439,7 @@ export default function Home() {
 
       <section id="documentos" className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <div className="mb-8">
-          <p className="text-sm font-black uppercase text-primary">Documentos oficiales</p>
+          <p className="text-sm font-black uppercase text-[#0063b5]">Documentos oficiales</p>
           <h2 className="mt-3 text-3xl font-black text-primary">Lee el CV y el plan completo</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
@@ -438,8 +454,8 @@ export default function Home() {
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
               Formación, trayectoria laboral, liderazgo social y antecedentes de Elizabeth Cabezas.
             </p>
-            <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-primary">
-              Descargar PDF <Download className="size-4" aria-hidden="true" />
+            <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-[#0063b5]">
+              Ver PDF <Download className="size-4" aria-hidden="true" />
             </span>
           </a>
           <a
@@ -453,8 +469,8 @@ export default function Home() {
             <p className="mt-3 text-sm leading-6 text-muted-foreground">
               Diagnóstico territorial, objetivos estratégicos, propuestas, presupuesto y rendición de cuentas.
             </p>
-            <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-primary">
-              Descargar PDF <Download className="size-4" aria-hidden="true" />
+            <span className="mt-5 inline-flex items-center gap-2 text-sm font-black text-[#0063b5]">
+              Ver PDF <Download className="size-4" aria-hidden="true" />
             </span>
           </a>
         </div>
@@ -491,20 +507,58 @@ export default function Home() {
                 className="group rounded-md border border-border p-5 transition hover:border-primary/35 hover:bg-secondary"
               >
                 <MessageCircle className="mb-4 size-7 text-primary" aria-hidden="true" />
-                <p className="font-black text-primary">Contacto</p>
+                <p className="font-black text-[#0063b5]">Contacto</p>
                 <p className="mt-2 break-words text-sm leading-6 text-muted-foreground">
                   contacto@renovacionpopularate.org.pe
                 </p>
               </a>
               <a href="#documentos" className="group rounded-md border border-border p-5 transition hover:border-primary/35 hover:bg-secondary">
                 <CalendarDays className="mb-4 size-7 text-primary" aria-hidden="true" />
-                <p className="font-black text-primary">Documentos</p>
+                <p className="font-black text-[#0063b5]">Documentos</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">Plan de gobierno y hoja de vida para revisar.</p>
               </a>
             </div>
           </div>
         </div>
       </section>
+
+      <footer className="bg-primary py-7 text-center text-sm font-bold text-white">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-5 sm:px-8">
+          <div className="flex items-center gap-5">
+            <a
+              href="https://www.facebook.com/ElizabethNancyCabezasFlores"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook de Elizabeth Cabezas"
+              className="transition hover:opacity-80"
+            >
+              <FacebookIcon className="size-5" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@elizabeth.nancy.cabezas"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok de Elizabeth Cabezas"
+              className="transition hover:opacity-80"
+            >
+              <TiktokIcon className="size-5" />
+            </a>
+            <a
+              href={WHATSAPP_GROUP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp de la campaña"
+              className="transition hover:opacity-80"
+            >
+              <WhatsappIcon className="size-5" />
+            </a>
+          </div>
+          <p>Renovación Popular Ate - Elizabeth Cabezas - Elecciones Municipales 2026</p>
+          <a href="#inicio" className="underline underline-offset-4">
+            Volver arriba ↑
+          </a>
+        </div>
+      </footer>
     </main>
   );
 }

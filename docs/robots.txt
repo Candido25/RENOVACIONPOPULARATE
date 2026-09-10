@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://renovacionpopularate.org.pe/sitemap.xml
