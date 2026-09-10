@@ -280,9 +280,6 @@ export default function Home() {
             <img
               src="/elizabeth-cabezas.jpg"
               alt="Elizabeth Cabezas, candidata a alcaldesa de Ate"
-              width={1667}
-              height={1667}
-              fetchPriority="high"
               className="aspect-[1.18/1] w-full object-cover object-center"
             />
           </div>
