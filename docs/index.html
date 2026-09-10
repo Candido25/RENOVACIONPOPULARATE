@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elizabeth Cabezas | Renovacion Popular Ate</title>
+    <meta
+      name="description"
+      content="Elizabeth Cabezas, candidata a alcaldesa de Ate por Renovacion Popular. Plan de Gobierno Municipal 2027-2030 y convocatoria vecinal."
+    />
+    <meta property="og:title" content="Elizabeth Cabezas | Renovacion Popular Ate" />
+    <meta
+      property="og:description"
+      content="Ate en buenas manos: seguridad, orden, decencia y participacion vecinal."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #049cd4;
+        --primary-dark: #0063b5;
+        --accent: #ffd52e;
+        --ink: #27313f;
+        --muted: #667085;
+        --line: #d8e6ef;
+        --soft: #eef9fd;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: #fbfdff;
+        color: var(--ink);
+        font-family: Montserrat, Arial, Helvetica, sans-serif;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: 0 4px 18px rgba(0, 99, 181, 0.08);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav {
+        display: flex;
+        min-height: 76px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-weight: 800;
+        color: var(--primary);
+      }
+
+      .brand img {
+        height: 48px;
+        width: auto;
+      }
+
+      .brand span {
+        border-left: 1px solid var(--line);
+        padding-left: 14px;
+      }
+
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        color: #425466;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        background: var(--accent);
+        color: #243653;
+        font-size: 14px;
+        font-weight: 900;
+        padding: 12px 18px;
+      }
+
+      .button.secondary {
+        border-color: rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--white);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(120deg, rgba(4, 156, 212, 0.98), rgba(0, 99, 181, 0.96));
+        color: var(--white);
+      }
+
+      .hero::after {
+        position: absolute;
+        inset: 0;
+        content: "";
+        opacity: 0.18;
+        background-image:
+          linear-gradient(90deg, #fff 1px, transparent 1px),
+          linear-gradient(#fff 1px, transparent 1px);
+        background-size: 44px 44px;
+      }
+
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 42px;
+        align-items: center;
+        padding: 54px 0;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.16);
+        color: inherit;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        padding: 9px 12px;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 20px;
+        font-size: clamp(44px, 7vw, 84px);
+        font-weight: 900;
+        line-height: 0.98;
+      }
+
+      .subtitle {
+        margin-top: 12px;
+        color: var(--accent);
+        font-size: clamp(24px, 3.2vw, 38px);
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        margin-top: 24px;
+        max-width: 660px;
+        color: #eaf9ff;
+        font-size: 19px;
+        font-weight: 600;
+        line-height: 1.7;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      .hero-photo {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 6px;
+        background: var(--white);
+        box-shadow: 0 26px 80px rgba(0, 0, 0, 0.24);
+      }
+
+      .hero-photo img {
+        aspect-ratio: 1.18 / 1;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      section {
+        padding: 68px 0;
+      }
+
+      .section-title {
+        color: var(--primary);
+        font-size: clamp(32px, 4vw, 54px);
+        font-weight: 900;
+        line-height: 1.08;
+        margin-top: 12px;
+      }
+
+      .section-copy {
+        color: var(--muted);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.8;
+        margin-top: 20px;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .campaign-photo {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--white);
+        box-shadow: 0 14px 38px rgba(0, 99, 181, 0.1);
+      }
+
+      .checks,
+      .cards,
+      .docs {
+        display: grid;
+        gap: 16px;
+      }
+
+      .checks {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 28px;
+      }
+
+      .check,
+      .card,
+      .doc {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--white);
+        box-shadow: 0 12px 28px rgba(0, 99, 181, 0.06);
+      }
+
+      .check {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        padding: 14px 16px;
+        color: #425466;
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .check::before {
+        display: grid;
+        flex: 0 0 22px;
+        width: 22px;
+        height: 22px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--accent);
+        color: #243653;
+        content: "✓";
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .band {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: var(--white);
+      }
+
+      .soft {
+        background: var(--soft);
+      }
+
+      .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 30px;
+      }
+
+      .cards.four {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 25px;
+      }
+
+      .metric {
+        color: var(--primary);
+        font-size: 42px;
+        font-weight: 900;
+      }
+
+      .card h3,
+      .doc h3 {
+        color: var(--ink);
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 1.2;
+        margin-top: 10px;
+      }
+
+      .card p,
+      .doc p {
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.7;
+        margin-top: 12px;
+      }
+
+      .zone-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .zone {
+        border: 1px solid rgba(4, 156, 212, 0.22);
+        border-radius: 6px;
+        background: var(--white);
+        color: var(--primary);
+        font-size: 14px;
+        font-weight: 900;
+        padding: 14px 16px;
+      }
+
+      .proposal-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .proposal {
+        display: flex;
+        gap: 12px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--white);
+        padding: 16px;
+        color: #425466;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.6;
+      }
+
+      .proposal::before {
+        color: var(--primary);
+        content: "✓";
+        font-weight: 900;
+      }
+
+      .docs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 28px;
+      }
+
+      .doc {
+        padding: 28px;
+      }
+
+      .doc span {
+        display: inline-flex;
+        margin-top: 18px;
+        color: var(--primary);
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .cta {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      .cta-grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .contact-box {
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 6px;
+        background: var(--white);
+        color: var(--ink);
+        padding: 24px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .contact-card {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 18px;
+      }
+
+      .contact-card strong {
+        display: block;
+        color: var(--primary);
+        font-weight: 900;
+      }
+
+      .contact-card span {
+        display: block;
+        overflow-wrap: anywhere;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.6;
+        margin-top: 8px;
+      }
+
+      .domain {
+        margin-top: 16px;
+        border-radius: 6px;
+        background: var(--accent);
+        color: #243653;
+        font-size: 14px;
+        font-weight: 900;
+        padding: 14px 16px;
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        background: var(--primary);
+        color: var(--white);
+        padding: 24px 0;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      @media (max-width: 920px) {
+        .links {
+          display: none;
+        }
+
+        .hero-grid,
+        .two-col,
+        .cta-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cards,
+        .cards.four,
+        .docs {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          width: min(100% - 24px, 1180px);
+        }
+
+        .brand span {
+          display: none;
+        }
+
+        .brand img {
+          height: 42px;
+        }
+
+        .button {
+          padding: 10px 12px;
+        }
+
+        .hero-grid,
+        section {
+          padding: 42px 0;
+        }
+
+        .checks,
+        .zone-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="container nav">
+        <a class="brand" href="#inicio" aria-label="Renovacion Popular Ate">
+          <img src="logo-renovacion-popular.png" alt="Renovacion Popular" />
+          <span>Ate</span>
+        </a>
+        <div class="links">
+          <a href="#candidata">Candidata</a>
+          <a href="#compromisos">Compromisos</a>
+          <a href="#plan">Plan</a>
+          <a href="#documentos">Documentos</a>
+        </div>
+        <a class="button" href="#participa">Afiliate →</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Ate en buenas manos</span>
+            <h1>Elizabeth Cabezas</h1>
+            <p class="subtitle">Alcaldesa de Ate</p>
+            <p class="lead">
+              Licenciada en Administracion, regidora de Ate 2023-2026 y candidata de Renovacion Popular
+              para recuperar el orden, la seguridad y la decencia en el distrito.
+            </p>
+            <div class="actions">
+              <a class="button" href="#plan">Ver plan 2027-2030</a>
+              <a class="button secondary" href="#documentos">Descargar documentos</a>
+            </div>
+          </div>
+          <div class="hero-photo">
+            <img src="elizabeth-cabezas.jpg" alt="Elizabeth Cabezas, candidata a alcaldesa de Ate" />
+          </div>
+        </div>
+      </section>
+
+      <section id="candidata">
+        <div class="container two-col">
+          <div class="campaign-photo">
+            <img src="elizabeth-cabezas-porky.jpg" alt="Elizabeth Cabezas junto a Rafael Lopez Aliaga en pieza de campana" />
+          </div>
+          <div>
+            <span class="eyebrow" style="background: var(--soft); color: var(--primary)">Nuestra candidata</span>
+            <h2 class="section-title">Elizabeth Nancy Cabezas Flores</h2>
+            <p class="section-copy">
+              Vecina arraigada en Ate, con raices andahuaylinas, experiencia municipal y una trayectoria
+              construida desde la fiscalizacion, la comunidad y el servicio publico.
+            </p>
+            <div class="checks">
+              <div class="check">Regidora de Ate 2023-2026</div>
+              <div class="check">Licenciada en Administracion de Empresas por USIL</div>
+              <div class="check">Programa especializado en Gestion Publica por USIL</div>
+              <div class="check">Fundadora de la Asociacion de Mujeres Emprendedoras de Lima Este</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="container">
+          <span class="eyebrow" style="background: var(--soft); color: var(--primary)">Hechos verificables</span>
+          <h2 class="section-title">Fiscalizacion con coraje</h2>
+          <div class="cards">
+            <article class="card">
+              <p class="metric">280</p>
+              <h3>camaras apagadas denunciadas</h3>
+              <p>Elizabeth expuso publicamente que Ate tuvo camaras sin conectividad durante seis meses.</p>
+            </article>
+            <article class="card">
+              <p class="metric">7</p>
+              <h3>zonas del distrito</h3>
+              <p>Trabajo con juntas vecinales, organizaciones sociales y comunidades de base en todo Ate.</p>
+            </article>
+            <article class="card">
+              <p class="metric">40k</p>
+              <h3>atenciones veterinarias</h3>
+              <p>Meta del plan para una clinica veterinaria municipal con atencion basica y campanas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="compromisos">
+        <div class="container">
+          <span class="eyebrow" style="background: var(--soft); color: var(--primary)">Tres compromisos para Ate</span>
+          <h2 class="section-title">Resultados, no promesas</h2>
+          <p class="section-copy">
+            El mensaje de campana se concentra en seguridad operativa, atencion municipal y barrios vivos en todo el distrito.
+          </p>
+          <div class="cards">
+            <article class="card">
+              <h3>Seguridad que funciona</h3>
+              <p>Camaras encendidas, serenazgo coordinado con PNP y tablero semanal de incidentes atendidos.</p>
+            </article>
+            <article class="card">
+              <h3>Municipalidad que atiende</h3>
+              <p>Tramites con plazo claro, responsable identificado, trato digno y cero "vuelva manana".</p>
+            </article>
+            <article class="card">
+              <h3>Barrio vivo en toda Ate</h3>
+              <p>Ruta de limpieza publicada, parques recuperados y gestion visible en cada cuadra.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="soft">
+        <div class="container two-col">
+          <div>
+            <span class="eyebrow" style="background: white; color: var(--primary)">Trabajo territorial</span>
+            <h2 class="section-title">Ate se organiza por zonas</h2>
+          </div>
+          <div class="zone-grid">
+            <div class="zone">Ate Centro</div>
+            <div class="zone">Salamanca</div>
+            <div class="zone">Mayorazgo</div>
+            <div class="zone">Santa Clara</div>
+            <div class="zone">Huaycan</div>
+            <div class="zone">Vitarte</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="plan">
+        <div class="container two-col" style="align-items: start">
+          <div>
+            <span class="eyebrow" style="background: var(--soft); color: var(--primary)">Plan de Gobierno Municipal 2027-2030</span>
+            <h2 class="section-title">Ate: volver a creer en un distrito con orden, seguridad y decencia</h2>
+            <p class="section-copy">
+              El plan identifica problemas de inseguridad, servicios basicos, limpieza publica, congestion,
+              informalidad y baja ejecucion presupuestal. La ruta propone gestion tecnica, transparente y de puertas abiertas.
+            </p>
+          </div>
+          <div class="cards" style="grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 0">
+            <article class="card"><h3>Dimension social</h3><p>Seguridad ciudadana, salud, infancia, educacion, deporte, cultura, adulto mayor e inclusion.</p></article>
+            <article class="card"><h3>Dimension economica</h3><p>Formalizacion, empleo juvenil, fortalecimiento de MYPE y simplificacion municipal.</p></article>
+            <article class="card"><h3>Dimension ambiental</h3><p>Limpieza publica, areas verdes, recuperacion de espacios publicos y ribera del rio Rimac.</p></article>
+            <article class="card"><h3>Dimension institucional</h3><p>Ejecucion presupuestal, transparencia, digitalizacion y rendicion de cuentas ciudadana.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="container two-col" style="align-items: start">
+          <div>
+            <span class="eyebrow" style="background: var(--soft); color: var(--primary)">Inversion y obras</span>
+            <h2 class="section-title">S/ 710 millones proyectados para inversiones</h2>
+            <p class="section-copy">
+              El plan plantea ejecutar S/ 510 millones de presupuesto municipal y gestionar S/ 200 millones adicionales
+              para obras de alto impacto durante 2027-2030.
+            </p>
+          </div>
+          <div class="proposal-list">
+            <div class="proposal">Cuatro centrales de monitoreo inteligente en Salamanca, Vitarte, Santa Clara y Huaycan.</div>
+            <div class="proposal">Pistas, veredas, escaleras, muros de contencion, parques, losas deportivas y locales comunales.</div>
+            <div class="proposal">Centro Municipal de empleabilidad juvenil y programa "Mi Primera Chamba".</div>
+            <div class="proposal">Policlinico, farmacia municipal, cuna municipal y veterinaria municipal.</div>
+            <div class="proposal">Tablero de control ciudadano y audiencias publicas dos veces al ano.</div>
+            <div class="proposal">Gestion de agua potable, alcantarillado, avenidas principales y obras de alto impacto.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="documentos">
+        <div class="container">
+          <span class="eyebrow" style="background: var(--soft); color: var(--primary)">Documentos oficiales</span>
+          <h2 class="section-title">Lee el CV y el plan completo</h2>
+          <div class="docs">
+            <a class="doc" href="hoja-de-vida-elizabeth-cabezas.pdf">
+              <h3>Hoja de vida</h3>
+              <p>Formacion, trayectoria laboral, liderazgo social y antecedentes de Elizabeth Cabezas.</p>
+              <span>Descargar PDF ↓</span>
+            </a>
+            <a class="doc" href="plan-gobierno-municipal-ate-2027-2030.pdf">
+              <h3>Plan de gobierno 2027-2030</h3>
+              <p>Diagnostico territorial, objetivos estrategicos, propuestas, presupuesto y rendicion de cuentas.</p>
+              <span>Descargar PDF ↓</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="participa" class="cta">
+        <div class="container cta-grid">
+          <div>
+            <span class="eyebrow">Convocatoria abierta</span>
+            <h2 class="section-title" style="color: white">Sumate a Renovacion Popular Ate</h2>
+            <p class="lead">
+              Afiliacion, personeros, voluntariado, reuniones vecinales y defensa del voto para que Ate vuelva a estar en buenas manos.
+            </p>
+          </div>
+          <div class="contact-box">
+            <div class="contact-grid">
+              <a class="contact-card" href="mailto:contacto@renovacionpopularate.org.pe">
+                <strong>Contacto</strong>
+                <span>contacto@renovacionpopularate.org.pe</span>
+              </a>
+              <a class="contact-card" href="#documentos">
+                <strong>Campana</strong>
+                <span>Actividades, recorridos y reuniones por zona.</span>
+              </a>
+            </div>
+            <p class="domain">Dominio sugerido: renovacionpopularate.org.pe</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">Renovacion Popular Ate - Elizabeth Cabezas - Elecciones Municipales 2026</div>
+    </footer>
+  </body>
+</html>
