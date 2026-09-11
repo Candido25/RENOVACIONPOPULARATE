@@ -469,6 +469,7 @@
       }
 
       .campaign-photo {
+        height: min(680px, 72vw);
         overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 6px;
@@ -477,8 +478,11 @@
       }
 
       .campaign-photo img {
+        height: 100%;
         width: 100%;
         display: block;
+        object-fit: cover;
+        object-position: center 72%;
       }
 
       .checks,
@@ -809,6 +813,15 @@
         .cards.four,
         .docs {
           grid-template-columns: 1fr;
+        }
+
+        .campaign-photo {
+          height: auto;
+        }
+
+        .campaign-photo img {
+          height: auto;
+          object-fit: contain;
         }
       }
 
